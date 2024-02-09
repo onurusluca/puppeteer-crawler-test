@@ -34,24 +34,3 @@ router.post('/start-crawl', async (req: Request, res: Response) => {
 });
 
 export default router;
-
-/* 
-
-curl -X POST -H "Content-Type: application/json" -d '{
-  "userId": "yourUserId",
-  "serviceId": "yourServiceId",
-  "startUrl": "https://typesense.org/docs/",
-  "maxDepth": 3,
-  "takeScreenshot": true,
-  "colorScheme": "light"
-}' http://localhost:3000/start-crawl
-
-curl -X POST -H "Content-Type: application/json" -d '{
-  "userId": "yourUserId",
-  "serviceId": "yourServiceId",
-  "startUrl": "https://typesense.org/docs/",
-}' http://localhost:3000/start-crawl
-
-curl -X POST http://localhost:3000/start-crawl -H "Content-Type: application/json" -d '{\"userId\": \"user123\", \"serviceId\": \"service456\", \"startUrl\": \"https://typesense.org/\"}'
-
-*/

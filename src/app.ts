@@ -19,12 +19,10 @@ app.use(cookieParser());
 
 app.use('/', router);
 
-// catch 404 and forward to error handler
 app.use((_req, _res, next) => {
   next(createError(404));
 });
 
-// error handler
 const errorHandler: express.ErrorRequestHandler = (err, _req, res) => {
   handleError(err, res);
 };
@@ -40,7 +38,6 @@ function onError(error: { syscall: string; code: string }) {
     throw error;
   }
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
       process.exit(1);

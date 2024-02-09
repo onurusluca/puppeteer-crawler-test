@@ -1,34 +1,37 @@
-<h1 align="center">Nodejs-Express Typescript Boilerplate</h1>
+<h1 align="center">Puppeteer Scraper with Nodejs, Express Typescript server</h1>
 
 <p align="center">
-  <b>Build your web servers without spending hours on setting up the project.</b></br>
-  <sub>Made with ❤️ by <a href="https://github.com/abhijeetgurle">Abhijeet</a></sub>
+  <b>Crawl any website using puppeteer concurrently & serve the data using a server app with nodejs, express & typescript</b>
+  </b>
+
 </p>
 
 <br>
 
-## Why I Have Created This?
+## What can it do?
 
-There are many boilerplates available on the internet which providers a server app with nodejs, express & typescript but I found them either too complex for my use case or too simple where I need to configure lot of features later. So I build this repo to be used in projects which are simple & doesn't require lot of unnecessary tooling.
+- Crawl a whole website or a specific page
+- Save the data in a JSON file
+- Save screenshots of the website
+- Serve the data using a server app with nodejs, express & typescript
 
-<br>
+## How to use?
 
-## Features
+- Clone the repository
+- Run `npm install` to install the dependencies
+- Run `npm start` to start the server
+- Edit `src/crawler/crawler.ts/` to change the crawler settings to your needs
+- Make a POST request to `http://localhost:3000/crawl`. Example request with curl:
 
-- **Simple Code** with no unnecessary dependencies.
-- **JSON & Cookie** parsing support with no need of configurations.
-- **Environment variables** can be easily added in file `.env` using library like [dotenv](https://www.npmjs.com/package/dotenv).
-- **Logging** support using libraries like [winston](https://www.npmjs.com/package/winston)
-- **Prettier & ESlint** added so that your code looks & feels consistent.
+```curl
+curl -X POST -H "Content-Type: application/json" -d '{
+  "userId": "yourUserId",
+  "serviceId": "yourServiceId",
+  "startUrl": "https://typesense.org/docs/",
+  "maxDepth": 3,
+  "takeScreenshot": true,
+  "colorScheme": "light"
+}' http://localhost:3000/start-crawl
+```
 
-<br>
-
-## How To Use It
-
-Download the zip file of this codebase & start writing your APIs 🎉.
-
-<br>
-
-## License
-
-[MIT](/LICENSE)
+- Profit!
